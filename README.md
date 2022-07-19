@@ -13,3 +13,5 @@
 
 ## Code Steps
 1. add domain entities (configured such that they match (excepting the col's length) the initial SQL)
+2. generate repositories using JPABuddy
+3. 
