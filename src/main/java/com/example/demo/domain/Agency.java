@@ -12,7 +12,7 @@ public class Agency {
     //region fields
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private String name;
 
@@ -40,7 +40,7 @@ public class Agency {
     //endregion
 
     //region getters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

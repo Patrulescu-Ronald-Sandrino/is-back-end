@@ -10,7 +10,7 @@ public class Estate {
     //region fields
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     private String address;
 
@@ -52,7 +52,7 @@ public class Estate {
     //endregion
 
     //region getters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 

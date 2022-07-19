@@ -10,7 +10,7 @@ public class Offer {
     //region fields
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ref_agency")
@@ -47,7 +47,7 @@ public class Offer {
     //endregion
 
     //region getters
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
