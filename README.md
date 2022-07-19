@@ -10,4 +10,6 @@
    3. downgrade `org.flywaydb:flyway-core` to `<version>7.15.0</version>` (source: 2nd answer from https://stackoverflow.com/questions/59779435/pivotal-web-services-flyway-enterprise-edition-or-mysql-upgrade-required)
 3. add swagger (search: swagger ui java 1.8 spring boot - https://www.javainuse.com/spring/boot_swagger3)
    1. just add the `org.springdoc:springdoc-openapi-ui:1.6.9` dependency and go to `localhost:8080/swagger-ui/index.html`
-4. 
+
+## Code Steps
+1. add domain entities (configured such that they match (excepting the col's length) the initial SQL)
