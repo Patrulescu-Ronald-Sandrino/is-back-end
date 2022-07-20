@@ -1,7 +1,11 @@
 package com.example.demo.domain;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Set;
 
 @Entity
 @Table(name = "estates", indexes = @Index(name = "unique_address", columnList = "address", unique = true))
@@ -25,6 +29,10 @@ public class Estate {
 
     @Column(name = "last_revision_date")
     private LocalDate lastRevisionDate;
+
+    @OneToMany(mappedBy = "estate")
+    @Fetch(FetchMode.SELECT)
+    private Set<Offer> offers;
     //endregion
 
     //region constructors
@@ -78,6 +86,10 @@ public class Estate {
 
     public LocalDate getLastRevisionDate() {
         return lastRevisionDate;
+    }
+
+    public Set<Offer> getOffers() {
+        return offers;
     }
     //endregion
 

@@ -20,7 +20,7 @@ public class AgencyController {
     private AgencyService agencyService;
     //endregion
 
-    //region methods
+    //region endpoints
     @GetMapping
     public ResponseEntity<List<Agency>> findAll() {
         return ResponseEntity.ok(agencyService.findAll());
@@ -56,7 +56,7 @@ public class AgencyController {
         return ResponseEntity.ok(agencyService.deleteAll());
     }
 
-    @GetMapping("find-all-by-name-contains/{substring}")
+    @GetMapping("/by-name-contains/{substring}")
     public List<Agency> findAllByNameContains(@PathVariable String substring) {
         return agencyService.findAllByNameContains(substring);
     }

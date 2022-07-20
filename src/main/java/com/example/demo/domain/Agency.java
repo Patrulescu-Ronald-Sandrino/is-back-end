@@ -1,9 +1,10 @@
 package com.example.demo.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
+import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "agencies")
@@ -19,6 +20,10 @@ public class Agency {
     private String phone;
 
     private String email;
+
+    @OneToMany(mappedBy = "agency")
+    @Fetch(FetchMode.SELECT)
+    private Set<Offer> offers;
     //endregion
 
     //region constructors
@@ -54,6 +59,10 @@ public class Agency {
 
     public String getEmail() {
         return email;
+    }
+
+    public Set<Offer> getOffers() {
+        return offers;
     }
     //endregion
 }
