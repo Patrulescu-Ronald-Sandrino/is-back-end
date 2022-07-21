@@ -8,6 +8,7 @@ import com.example.demo.repository.EstateRepository;
 import com.example.demo.repository.OfferRepository;
 import com.example.demo.service.AgencyService;
 import com.example.demo.service.EstateService;
+import com.example.demo.service.OfferService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -41,8 +42,8 @@ public class TestController {
     @Autowired
     private EstateService estateService;
 
-//    @Autowired
-//    private OfferService offerService;
+    @Autowired
+    private OfferService offerService;
 
     private final Random r = new Random();
     //endregion
@@ -57,7 +58,7 @@ public class TestController {
     public ResponseEntity<String> clearDatabase() {
         return ResponseEntity.ok(new HashMap<String, Long>() {
             {
-//                put("offers", offerService.deleteAll());
+                put("offers", offerService.deleteAll());
                 put("agencies", agencyService.deleteAll());
                 put("estates", estateService.deleteAll());
             }
