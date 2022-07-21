@@ -12,11 +12,11 @@ public class Offer {
     @GeneratedValue
     private Long id;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "ref_agency")
     private Agency agency;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "ref_estate")
     private Estate estate;
 
