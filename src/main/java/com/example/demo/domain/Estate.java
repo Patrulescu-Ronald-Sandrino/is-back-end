@@ -83,8 +83,6 @@ public class Estate {
 
     //endregion
 
-    // TODO MAYBE: add setters if something at DB level breaks because of their lack
-
     public enum Type {
         apartment,
         house

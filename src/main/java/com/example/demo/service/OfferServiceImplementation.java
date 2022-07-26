@@ -27,8 +27,8 @@ public class OfferServiceImplementation implements OfferService {
     }
 
     @Override
-    public void add(Offer offer) {
-        offerRepository.saveAndFlush(offer);
+    public Offer add(Offer offer) {
+        return offerRepository.saveAndFlush(offer);
     }
 
     @Override

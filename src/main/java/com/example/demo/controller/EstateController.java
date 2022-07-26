@@ -1,7 +1,6 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.Estate;
-import com.example.demo.exceptions.ExceptionWithHttpStatus;
 import com.example.demo.service.EstateService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -32,16 +31,12 @@ public class EstateController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(@RequestBody Estate estate) {
-        estateService.add(estate);
+    public Estate add(@RequestBody Estate estate) {
+        return estateService.add(estate);
     }
 
-    @PutMapping("/{id}")
-    public void update(@RequestBody Estate estate, @PathVariable long id) {
-        if (estate.getId() != id) {
-            throw new ExceptionWithHttpStatus(HttpStatus.BAD_REQUEST, "id mismatch");
-//            throw new RuntimeException("id mismatch");
-        }
+    @PutMapping
+    public void update(@RequestBody Estate estate) {
         estateService.update(estate);
     }
 

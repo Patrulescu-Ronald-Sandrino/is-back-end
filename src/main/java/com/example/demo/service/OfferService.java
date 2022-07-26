@@ -9,7 +9,7 @@ public interface OfferService {
 
     Offer findById(long id);
 
-    void add(Offer offer);
+    Offer add(Offer offer);
 
     void update(Offer offer);
 

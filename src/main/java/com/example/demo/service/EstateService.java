@@ -9,7 +9,7 @@ public interface EstateService {
 
     Estate findById(long id);
 
-    void add(Estate estate);
+    Estate add(Estate estate);
 
     void update(Estate estate);
 

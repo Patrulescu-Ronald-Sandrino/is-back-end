@@ -31,8 +31,8 @@ public class AgencyServiceImplementation implements AgencyService {
     }
 
     @Override
-    public void add(Agency agency) {
-        agencyRepository.saveAndFlush(agency);
+    public Agency add(Agency agency) {
+        return agencyRepository.saveAndFlush(agency);
     }
 
     @Override

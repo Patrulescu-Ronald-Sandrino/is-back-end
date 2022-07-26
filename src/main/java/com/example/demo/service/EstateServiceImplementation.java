@@ -30,8 +30,8 @@ public class EstateServiceImplementation implements EstateService {
     }
 
     @Override
-    public void add(Estate estate) {
-        estateRepository.saveAndFlush(estate);
+    public Estate add(Estate estate) {
+        return estateRepository.saveAndFlush(estate);
     }
 
     @Override

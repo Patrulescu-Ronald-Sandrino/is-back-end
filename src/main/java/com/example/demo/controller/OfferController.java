@@ -1,10 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.domain.Offer;
-import com.example.demo.exceptions.ExceptionWithHttpStatus;
 import com.example.demo.service.OfferService;
-import io.swagger.v3.oas.annotations.OpenAPIDefinition;
-import io.swagger.v3.oas.annotations.info.Info;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,16 +31,12 @@ public class OfferController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public void add(@RequestBody Offer offer) {
-        offerService.add(offer);
+    public Offer add(@RequestBody Offer offer) {
+        return offerService.add(offer);
     }
 
-    @PutMapping("/{id}")
-    public void update(@RequestBody Offer offer, @PathVariable long id) {
-        if (offer.getId() != id) {
-            throw new ExceptionWithHttpStatus(HttpStatus.BAD_REQUEST, "id mismatch");
-//            throw new RuntimeException("id mismatch");
-        }
+    @PutMapping
+    public void update(@RequestBody Offer offer) {
         offerService.update(offer);
     }
 

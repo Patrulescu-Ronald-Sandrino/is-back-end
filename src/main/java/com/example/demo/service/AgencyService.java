@@ -9,7 +9,7 @@ public interface AgencyService {
 
     Agency findById(long id);
 
-    void add(Agency agency);
+    Agency add(Agency agency);
 
     void update(Agency agency);
 
